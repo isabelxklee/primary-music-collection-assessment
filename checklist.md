@@ -66,7 +66,7 @@ Notes:
 > show all by "Beastie Boys"
 ```
 
-- show all the albums by a given artist
+✅ show all the albums by a given artist
 
 - check for errors
 
