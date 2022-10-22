@@ -6,5 +6,5 @@ export const runCommands = async () => {
 
   console.log(`answer: ${answer}`);
 
-  rl.close();
+  // rl.close();
 };

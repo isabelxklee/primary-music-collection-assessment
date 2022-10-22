@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { albums, rl } from "../variables.js";
+import { runCommands } from "./logger.js";
 
 const welcomeMessage = `
   🎵 Welcome to your music collection!
@@ -18,3 +18,5 @@ const welcomeMessage = `
 `;
 
 console.log(welcomeMessage);
+
+runCommands();
