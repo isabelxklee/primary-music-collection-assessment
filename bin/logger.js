@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import { rl } from "../variables.js";
-import { showAll } from "./show-all.js";
 import { music } from "./index.js";
 import { addAlbum } from "./add.js";
 import { quitApp } from "./quit.js";
 import { playAlbum } from "./play.js";
+import { showAll, showAllByArtist } from "./show-all.js";
 import { showUnplayed, showUnplayedByArtist } from "./show-unplayed.js";
 
 export const runCommands = async () => {
@@ -42,6 +42,7 @@ export const runCommands = async () => {
       showUnplayedByArtist(answer);
       break;
     case "show all by":
+      showAllByArtist(answer);
       break;
   }
 

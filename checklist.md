@@ -54,7 +54,7 @@ Notes:
 > show unplayed
 ```
 
-- display all of the unplayed albums
+✅ display all of the unplayed albums
 
 - check for errors
 
@@ -78,7 +78,7 @@ Notes:
 > show unplayed by "Beastie Boys"
 ```
 
-- show all the unplayed albums by a given artist
+✅ show all the unplayed albums by a given artist
 
 - check for errors
 

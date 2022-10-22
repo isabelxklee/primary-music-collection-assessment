@@ -19,3 +19,34 @@ export const showAll = () => {
 
   runCommands();
 };
+
+export const showAllByArtist = (answer) => {
+  let arr = answer.split(" ");
+  arr.splice(0, 3);
+  const artist = arr.join(" ");
+
+  // filter albums by artist and unplayed status
+  let results = albums.filter((album) => {
+    return (
+      album.artist.toLowerCase().replace(/"/g, "") ===
+      artist.toLowerCase().replace(/"/g, "")
+    );
+  });
+
+  // format each album to look like the following:
+  // "Pauls Boutique" by Beastie Boys
+
+  let resultsMessage = results.map((album) => {
+    console.log(
+      `"${album.title}" by ${album.artist} (${
+        album.played ? "played" : "unplayed"
+      })`
+    );
+  });
+
+  results.length > 0
+    ? resultsMessage
+    : console.log("Oops! There aren't any albums by this artist yet.");
+
+  runCommands();
+};
