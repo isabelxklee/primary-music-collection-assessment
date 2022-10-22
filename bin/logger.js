@@ -4,6 +4,7 @@ import { showAll } from "./show-all.js";
 import { music } from "./index.js";
 import { addAlbum } from "./add.js";
 import { quitApp } from "./quit.js";
+import { playAlbum } from "./play.js";
 
 export const runCommands = async () => {
   const answer = await rl.question("Please enter a command: ");
@@ -25,6 +26,9 @@ export const runCommands = async () => {
   switch (command) {
     case "add":
       addAlbum(answer);
+      break;
+    case "play":
+      playAlbum();
       break;
   }
 

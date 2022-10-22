@@ -2,11 +2,10 @@
 import { albums } from "../variables.js";
 import { runCommands } from "./logger.js";
 
-export const findAlbum = (answer) => {
+export const playAlbum = (answer) => {
   const split = answer.split(/"/g);
 
   const albumTitle = split[1];
-  const artist = split[3];
 
   let result = albums.find((album) => {
     return album.title.toLowerCase() === albumTitle.toLowerCase();
@@ -21,8 +20,9 @@ export const findAlbum = (answer) => {
 
     // change play status
     result.played = true;
-    db.write();
   } else {
     console.log("Oops! That album doesn't exist.");
   }
+
+  runCommands();
 };
