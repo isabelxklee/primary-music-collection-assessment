@@ -24,15 +24,15 @@ export const showUnplayed = () => {
 };
 
 export const showUnplayedByArtist = (answer) => {
-  const split = answer.split(/"/g);
-
-  const artist = split[3];
+  let arr = answer.split(" ");
+  arr.splice(0, 3);
+  const artist = arr.join(" ");
 
   // filter albums by artist and unplayed status
   let results = albums.filter((album) => {
     return (
-      album.artist.toLowerCase() === artist.toLowerCase() &&
-      album.played === false
+      album.artist.toLowerCase().replace(/"/g, "") ===
+        artist.toLowerCase().replace(/"/g, "") && album.played === false
     );
   });
 
