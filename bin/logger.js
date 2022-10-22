@@ -7,8 +7,6 @@ import { addAlbum } from "./add.js";
 export const runCommands = async () => {
   const answer = await rl.question("Please enter a command: ");
 
-  console.log(`answer: ${answer}`);
-
   const command = answer.split(" ")[0];
 
   switch (answer) {

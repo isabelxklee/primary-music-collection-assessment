@@ -18,9 +18,9 @@ Notes:
 
 ✅ display a message
 
-✅ check for errors
+- check for errors
 
-- [ ] write tests
+- write tests
 
 ### Play
 
@@ -28,13 +28,13 @@ Notes:
 > play "Licensed to Ill"
 ```
 
-✅ mark a given album as played
+- mark a given album as played
 
-✅ display a message
+- display a message
 
-✅ check for errors
+- check for errors
 
-- [ ] write tests
+- write tests
 
 ### Show all
 
@@ -44,9 +44,9 @@ Notes:
 
 ✅ display all the albums in the database
 
-✅ check for errors
+- check for errors
 
-- [ ] write tests
+- write tests
 
 ### Show unplayed
 
@@ -54,11 +54,11 @@ Notes:
 > show unplayed
 ```
 
-✅ display all of the unplayed albums
+- display all of the unplayed albums
 
-✅ check for errors
+- check for errors
 
-- [ ] write tests
+- write tests
 
 ### Show all by artist
 
@@ -66,11 +66,11 @@ Notes:
 > show all by "Beastie Boys"
 ```
 
-✅ show all the albums by a given artist
+- show all the albums by a given artist
 
-✅ check for errors
+- check for errors
 
-- [ ] write tests
+- write tests
 
 ### Show unplayed albums by artist
 
@@ -78,11 +78,11 @@ Notes:
 > show unplayed by "Beastie Boys"
 ```
 
-✅ show all the unplayed albums by a given artist
+- show all the unplayed albums by a given artist
 
-✅ check for errors
+- check for errors
 
-- [ ] write tests
+- write tests
 
 ### Quit
 
@@ -96,5 +96,4 @@ Bye!
 
 ✅ reset the database
 
-- [ ] write tests
-  - make sure database gets successfully reset
+- write tests
