@@ -28,9 +28,9 @@ Notes:
 > play "Licensed to Ill"
 ```
 
-- mark a given album as played
+✅ mark a given album as played
 
-- display a message
+✅ display a message
 
 - check for errors
 
