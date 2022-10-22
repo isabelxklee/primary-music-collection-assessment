@@ -3,7 +3,13 @@ import { albums } from "../variables.js";
 import { runCommands } from "./logger.js";
 
 export const addAlbum = (answer) => {
-  console.log(answer);
+  const split = answer.split(/"/g);
+
+  const albumTitle = split[1];
+  const artist = split[3];
+
+  console.log(`title: ${albumTitle}`);
+  console.log(`artist: ${artist}`);
 
   // let results = albums.filter((album) => {
   //   return album.title.toLowerCase() === albumTitle.toLowerCase();
