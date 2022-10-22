@@ -1,6 +1,8 @@
 #!/usr/bin/env node
+import { runCommands } from "./logger.js";
 
-const welcomeMessage = `
+export const music = () => {
+  const message = `
   🎵 Welcome to your music collection!
   🎵
   This app helps you keep track of the albums you've added and played.
@@ -15,5 +17,8 @@ const welcomeMessage = `
     show unplayed by <artist>   display all the unplayed albums by a given artist
     quit                        closes the program and your session
 `;
+  console.log(message);
+};
 
-console.log(welcomeMessage);
+music();
+runCommands();
