@@ -8,30 +8,28 @@ export const addAlbum = (answer) => {
   const albumTitle = split[1];
   const artist = split[3];
 
-  console.log(`title: ${albumTitle}`);
-  console.log(`artist: ${artist}`);
+  let results = albums.filter((album) => {
+    return album.title.toLowerCase() === albumTitle.toLowerCase();
+  });
 
-  // let results = albums.filter((album) => {
-  //   return album.title.toLowerCase() === albumTitle.toLowerCase();
-  // });
+  // if the results array's length is longer than 0
+  // that means that we have a duplicate
+  // display error message to user
+  if (results.length > 0) {
+    console.log(
+      "Error: this album title already exists in the database. Please try adding a different album!"
+    );
+  } else {
+    // otherwise, push the album data to the db
+    albums.push({
+      title: albumTitle,
+      artist: artist,
+      played: false,
+    });
 
-  // // if the results array's length is longer than 0
-  // // that means that we have a duplicate
-  // // display error message to user
-  // if (results.length > 0) {
-  //   console.log(
-  //     "Error: this album title already exists in the database. Please try adding a different album!"
-  //   );
-  // } else {
-  //   // otherwise, push the album data to the db
-  //   albums.push({
-  //     title: albumTitle,
-  //     artist: artist,
-  //     played: false,
-  //   });
-  //   db.write();
+    // display added album back to user
+    console.log(`Added "${albumTitle}" by ${artist}`);
+  }
 
-  //   // display added album back to user
-  //   console.log(`Added "${albumTitle}" by ${artist}`);
-  // }
+  runCommands();
 };
