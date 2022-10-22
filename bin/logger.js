@@ -3,6 +3,7 @@ import { rl } from "../variables.js";
 import { showAll } from "./show-all.js";
 import { music } from "./index.js";
 import { addAlbum } from "./add.js";
+import { quitApp } from "./quit.js";
 
 export const runCommands = async () => {
   const answer = await rl.question("Please enter a command: ");
@@ -15,6 +16,9 @@ export const runCommands = async () => {
       break;
     case "music":
       music();
+      break;
+    case "quit":
+      quitApp();
       break;
   }
 
