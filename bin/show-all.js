@@ -16,6 +16,6 @@ export const showAll = () => {
     : console.log(
         "Oops! There aren't any albums yet. Try adding a new album with the `add <album> <artist>` command."
       );
-};
 
-runCommands();
+  runCommands();
+};
