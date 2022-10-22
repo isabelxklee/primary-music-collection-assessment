@@ -5,6 +5,7 @@ import { music } from "./index.js";
 import { addAlbum } from "./add.js";
 import { quitApp } from "./quit.js";
 import { playAlbum } from "./play.js";
+import { showUnplayed } from "./show-unplayed.js";
 
 export const runCommands = async () => {
   const answer = await rl.question("Please enter a command: ");
@@ -20,6 +21,9 @@ export const runCommands = async () => {
       break;
     case "quit":
       quitApp();
+      break;
+    case "show unplayed":
+      showUnplayed();
       break;
   }
 
