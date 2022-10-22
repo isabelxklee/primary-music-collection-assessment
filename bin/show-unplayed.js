@@ -23,25 +23,29 @@ export const showUnplayed = () => {
   runCommands();
 };
 
-// check if there are any albums by this artist
+export const showUnplayedByArtist = (answer) => {
+  const split = answer.split(/"/g);
 
-// export const showUnplayedByArtist = () => {
-//   // filter albums by artist and unplayed status
-//   let results = albums.filter((album) => {
-//     return (
-//       album.artist.toLowerCase() === artist.toLowerCase() &&
-//       album.played === false
-//     );
-//   });
+  const artist = split[3];
 
-//   // format each album to look like the following:
-//   // "Pauls Boutique" by Beastie Boys
+  // filter albums by artist and unplayed status
+  let results = albums.filter((album) => {
+    return (
+      album.artist.toLowerCase() === artist.toLowerCase() &&
+      album.played === false
+    );
+  });
 
-//   let resultsMessage = results.map((album) => {
-//     console.log(`"${album.title}" by ${album.artist}`);
-//   });
+  // format each album to look like the following:
+  // "Pauls Boutique" by Beastie Boys
 
-//   results.length > 0
-//     ? resultsMessage
-//     : console.log("Oops! There aren't any unplayed albums by this artist yet.");
-// };
+  let resultsMessage = results.map((album) => {
+    console.log(`"${album.title}" by ${album.artist}`);
+  });
+
+  results.length > 0
+    ? resultsMessage
+    : console.log("Oops! There aren't any unplayed albums by this artist yet.");
+
+  runCommands();
+};
