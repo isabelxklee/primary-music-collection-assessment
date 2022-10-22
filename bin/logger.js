@@ -28,7 +28,7 @@ export const runCommands = async () => {
       addAlbum(answer);
       break;
     case "play":
-      playAlbum();
+      playAlbum(answer);
       break;
   }
 
