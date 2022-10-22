@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/isabelxklee/primary-music-collection-assessment/issues"
   },
-  "homepage": "https://github.com/isabelxklee/primary-music-collection-assessment#readme"
+  "homepage": "https://github.com/isabelxklee/primary-music-collection-assessment#readme",
+  "type": "module"
 }
