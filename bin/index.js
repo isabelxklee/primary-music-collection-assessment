@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { albums, rl } from "../variables.js";
 
 const welcomeMessage = `
   🎵 Welcome to your music collection!
