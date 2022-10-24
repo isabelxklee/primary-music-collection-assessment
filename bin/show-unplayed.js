@@ -33,6 +33,12 @@ export const showUnplayedByArtist = (answer) => {
 
   const artist = arr[1];
 
+  if (artist === undefined) {
+    console.log("Please enter a valid artist name.");
+    runCommands();
+    return;
+  }
+
   // filter albums by artist and unplayed status
   let results = albums.filter((album) => {
     return (
