@@ -3,7 +3,9 @@ import { albums } from "../variables.js";
 import { runCommands } from "./logger.js";
 
 export const addAlbum = (answer) => {
-  const split = answer.split(/"/g);
+  const split = answer.split(/["'`]/g);
+
+  console.dir(split);
 
   const albumTitle = split[1];
   const artist = split[3];
