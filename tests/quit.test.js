@@ -6,7 +6,7 @@ test("removes all albums from the database", () => {
   expect(quitApp()).toBeArray();
 });
 
-it('console.log the text "hello"', () => {
+test("log a goodbye message to the console", () => {
   console.log = jest.fn();
   quitApp();
   // The first argument of the first call to the function was 'hello'
