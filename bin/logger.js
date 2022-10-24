@@ -7,7 +7,7 @@ import { playAlbum } from "./play.js";
 import { showAll, showAllByArtist } from "./show-all.js";
 import { showUnplayed, showUnplayedByArtist } from "./show-unplayed.js";
 
-export const runCommands = async () => {
+export var runCommands = async function () {
   const commandList = ["show", "play", "add", "quit"];
   const answer = await rl.question("What would you like to do? ");
 
@@ -54,4 +54,6 @@ export const runCommands = async () => {
       showAllByArtist(answer);
       break;
   }
+
+  return;
 };

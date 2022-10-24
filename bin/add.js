@@ -5,9 +5,6 @@ import { runCommands } from "./logger.js";
 export const addAlbum = (answer) => {
   let arr = stringToArray(answer);
 
-  console.dir(arr);
-  console.log(arr.length);
-
   const albumTitle = arr[1];
   const artist = arr[3];
 
