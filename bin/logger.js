@@ -10,8 +10,6 @@ import { showUnplayed, showUnplayedByArtist } from "./show-unplayed.js";
 export const runCommands = async () => {
   const answer = await rl.question("Please enter a command: ");
 
-  console.dir(answer);
-
   const commandPrefix = answer.split(" ")[0];
   // const command2 = answer.split(" ").slice(0, 3).join(" ");
 
