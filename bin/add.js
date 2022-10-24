@@ -5,15 +5,18 @@ import { runCommands } from "./logger.js";
 export const addAlbum = (answer) => {
   let arr = stringToArray(answer);
 
-  const albumTitle = arr[1];
-  const artist = arr[3];
+  console.dir(arr);
+  console.log(arr.length);
 
   // check for valid # of arguments
-  if (arr.length > 5) {
-    console.log("Please enter a valid album title and artist.");
+  if (arr.length < 2 || arr.length > 5) {
+    console.log("Please enter a valid album title and artist name.");
     runCommands();
     return;
   }
+
+  const albumTitle = arr[1];
+  const artist = arr[3];
 
   let results = albums.filter((album) => {
     return album.title.toLowerCase() === albumTitle.toLowerCase();

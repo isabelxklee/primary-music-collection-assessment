@@ -8,8 +8,8 @@ import { showAll, showAllByArtist } from "./show-all.js";
 import { showUnplayed, showUnplayedByArtist } from "./show-unplayed.js";
 
 export const runCommands = async () => {
-  const commandPrefixes = ["show", "play", "add", "quit"];
-  const answer = await rl.question("Please enter a command: ");
+  const commandList = ["show", "play", "add", "quit"];
+  const answer = await rl.question("What would you like to do? ");
 
   const commandPrefix = answer.split(" ")[0];
   const commandPrefixLong = answer.split(" ").slice(0, 3).join(" ");
@@ -17,7 +17,7 @@ export const runCommands = async () => {
   // if the first element in the answer isn't any of the command words
   // then display an error message
 
-  if (commandPrefixes.indexOf(commandPrefix) === -1) {
+  if (commandList.indexOf(commandPrefix) === -1) {
     console.log("Please enter a valid command.");
     runCommands();
   }
