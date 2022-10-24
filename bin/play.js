@@ -7,6 +7,12 @@ export const playAlbum = (answer) => {
 
   const albumTitle = arr[1];
 
+  if (albumTitle === undefined) {
+    console.log("Please enter a valid album title and artist name.");
+    runCommands();
+    return;
+  }
+
   let result = albums.find((album) => {
     return album.title.toLowerCase() === albumTitle.toLowerCase();
   });
