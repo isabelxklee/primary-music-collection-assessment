@@ -57,28 +57,29 @@ export var runCommands = async function () {
     case "show unplayed":
       showUnplayed();
       break;
-  }
 
-  switch (commandPrefix) {
-    case "add":
-      addAlbum(answer);
-      break;
-    case "play":
-      playAlbum(answer);
-      break;
+    default:
+      switch (commandPrefix) {
+        case "add":
+          addAlbum(answer);
+          break;
+        case "play":
+          playAlbum(answer);
+          break;
+        default:
+          switch (commandPrefixLong) {
+            case "show unplayed by":
+              showUnplayedByArtist(answer);
+              break;
+            case "show all by":
+              showAllByArtist(answer);
+              break;
+            default:
+              console.log("Please enter a valid command.");
+              runCommands();
+          }
+      }
   }
-
-  switch (commandPrefixLong) {
-    case "show unplayed by":
-      showUnplayedByArtist(answer);
-      break;
-    case "show all by":
-      showAllByArtist(answer);
-      break;
-  }
-
-  console.log("Please enter a valid command.");
-  runCommands();
 
   return;
 };
