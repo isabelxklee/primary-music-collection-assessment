@@ -1,5 +1,4 @@
 import { jest } from "@jest/globals";
-import { toBeArray } from "jest-extended";
 import { music } from "../bin/index.js";
 
 test('log a welcome message to the console"', () => {
