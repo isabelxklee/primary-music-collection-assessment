@@ -1,5 +1,6 @@
 import { quitApp } from "../bin/quit.js";
+import { toBeArray } from "jest-extended";
 
 test("clears out albums", () => {
-  expect(quitApp()).toBe([]);
+  expect(quitApp()).toBeArray();
 });
