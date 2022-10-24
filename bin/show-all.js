@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { albums } from "../variables.js";
+import { albums, stringToArray } from "../variables.js";
 import { runCommands } from "./logger.js";
 
 export const showAll = () => {
@@ -21,9 +21,9 @@ export const showAll = () => {
 };
 
 export const showAllByArtist = (answer) => {
-  let arr = answer.split(" ");
-  arr.splice(0, 3);
-  const artist = arr.join(" ");
+  let arr = stringToArray(answer);
+
+  const artist = arr[1];
 
   // filter albums by artist and unplayed status
   let results = albums.filter((album) => {

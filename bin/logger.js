@@ -11,7 +11,7 @@ export const runCommands = async () => {
   const answer = await rl.question("Please enter a command: ");
 
   const commandPrefix = answer.split(" ")[0];
-  // const command2 = answer.split(" ").slice(0, 3).join(" ");
+  const commandPrefixLong = answer.split(" ").slice(0, 3).join(" ");
 
   switch (answer) {
     case "show all":
@@ -37,12 +37,12 @@ export const runCommands = async () => {
       break;
   }
 
-  // switch (command2) {
-  //   case "show unplayed by":
-  //     showUnplayedByArtist(answer);
-  //     break;
-  //   case "show all by":
-  //     showAllByArtist(answer);
-  //     break;
-  // }
+  switch (commandPrefixLong) {
+    case "show unplayed by":
+      showUnplayedByArtist(answer);
+      break;
+    case "show all by":
+      showAllByArtist(answer);
+      break;
+  }
 };
