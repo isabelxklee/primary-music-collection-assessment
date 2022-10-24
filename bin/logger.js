@@ -10,8 +10,10 @@ import { showUnplayed, showUnplayedByArtist } from "./show-unplayed.js";
 export const runCommands = async () => {
   const answer = await rl.question("Please enter a command: ");
 
-  const command = answer.split(" ")[0];
-  const command2 = answer.split(" ").slice(0, 3).join(" ");
+  console.dir(answer);
+
+  const commandPrefix = answer.split(" ")[0];
+  // const command2 = answer.split(" ").slice(0, 3).join(" ");
 
   switch (answer) {
     case "show all":
@@ -28,7 +30,7 @@ export const runCommands = async () => {
       break;
   }
 
-  switch (command) {
+  switch (commandPrefix) {
     case "add":
       addAlbum(answer);
       break;
@@ -37,14 +39,12 @@ export const runCommands = async () => {
       break;
   }
 
-  switch (command2) {
-    case "show unplayed by":
-      showUnplayedByArtist(answer);
-      break;
-    case "show all by":
-      showAllByArtist(answer);
-      break;
-  }
-
-  // rl.close();
+  // switch (command2) {
+  //   case "show unplayed by":
+  //     showUnplayedByArtist(answer);
+  //     break;
+  //   case "show all by":
+  //     showAllByArtist(answer);
+  //     break;
+  // }
 };
