@@ -8,10 +8,19 @@ import { showAll, showAllByArtist } from "./show-all.js";
 import { showUnplayed, showUnplayedByArtist } from "./show-unplayed.js";
 
 export const runCommands = async () => {
-  const answer = await rl.question("Please enter a command: ");
+  const commandList = ["show", "play", "add", "quit"];
+  const answer = await rl.question("What would you like to do? ");
 
-  const command = answer.split(" ")[0];
-  const command2 = answer.split(" ").slice(0, 3).join(" ");
+  const commandPrefix = answer.split(" ")[0];
+  const commandPrefixLong = answer.split(" ").slice(0, 3).join(" ");
+
+  // if the first element in the answer isn't any of the command words
+  // then display an error message
+
+  if (commandList.indexOf(commandPrefix) === -1) {
+    console.log("Please enter a valid command.");
+    runCommands();
+  }
 
   switch (answer) {
     case "show all":
@@ -28,7 +37,7 @@ export const runCommands = async () => {
       break;
   }
 
-  switch (command) {
+  switch (commandPrefix) {
     case "add":
       addAlbum(answer);
       break;
@@ -37,7 +46,7 @@ export const runCommands = async () => {
       break;
   }
 
-  switch (command2) {
+  switch (commandPrefixLong) {
     case "show unplayed by":
       showUnplayedByArtist(answer);
       break;
@@ -45,6 +54,4 @@ export const runCommands = async () => {
       showAllByArtist(answer);
       break;
   }
-
-  // rl.close();
 };

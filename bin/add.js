@@ -1,24 +1,34 @@
 #!/usr/bin/env node
-import { albums } from "../variables.js";
+import { albums, stringToArray } from "../variables.js";
 import { runCommands } from "./logger.js";
 
 export const addAlbum = (answer) => {
-  const split = answer.split(/"/g);
+  let arr = stringToArray(answer);
 
-  const albumTitle = split[1];
-  const artist = split[3];
+  console.dir(arr);
+  console.log(arr.length);
+
+  const albumTitle = arr[1];
+  const artist = arr[3];
+
+  // check for valid inputs
+  if (albumTitle === undefined || artist === undefined) {
+    console.log("Please enter a valid album title and artist name.");
+    runCommands();
+    return;
+  }
 
   let results = albums.filter((album) => {
     return album.title.toLowerCase() === albumTitle.toLowerCase();
   });
 
-  // if the results array's length is longer than 0
-  // that means that we have a duplicate
-  // display error message to user
+  // check for duplicate album titles
   if (results.length > 0) {
     console.log(
       "Error: this album title already exists in the database. Please try adding a different album!"
     );
+    runCommands();
+    return;
   } else {
     // otherwise, push the album data to the db
     albums.push({

@@ -18,7 +18,8 @@ export const music = () => {
     quit                        closes the program and your session
 `;
   console.log(message);
+
+  runCommands();
 };
 
 music();
-runCommands();
