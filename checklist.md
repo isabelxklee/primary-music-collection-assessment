@@ -18,9 +18,9 @@ Notes:
 
 ✅ display a message
 
-- check for errors
+✅ check for errors
 
-- write tests
+✅ write tests
 
 ### Play
 
@@ -32,9 +32,9 @@ Notes:
 
 ✅ display a message
 
-- check for errors
+✅ check for errors
 
-- write tests
+✅ write tests
 
 ### Show all
 
@@ -44,9 +44,9 @@ Notes:
 
 ✅ display all the albums in the database
 
-- check for errors
+✅ check for errors
 
-- write tests
+✅ write tests
 
 ### Show unplayed
 
@@ -56,9 +56,9 @@ Notes:
 
 ✅ display all of the unplayed albums
 
-- check for errors
+✅ check for errors
 
-- write tests
+✅ write tests
 
 ### Show all by artist
 
@@ -68,9 +68,9 @@ Notes:
 
 ✅ show all the albums by a given artist
 
-- check for errors
+✅ check for errors
 
-- write tests
+✅ write tests
 
 ### Show unplayed albums by artist
 
@@ -80,9 +80,9 @@ Notes:
 
 ✅ show all the unplayed albums by a given artist
 
-- check for errors
+✅ check for errors
 
-- write tests
+✅ write tests
 
 ### Quit
 
@@ -96,4 +96,4 @@ Bye!
 
 ✅ reset the database
 
-- write tests
+✅ write tests
