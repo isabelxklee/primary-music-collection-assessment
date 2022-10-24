@@ -19,7 +19,7 @@ export const music = () => {
 `;
   console.log(message);
 
-  runCommands();
+  // runCommands();
 };
 
 music();
