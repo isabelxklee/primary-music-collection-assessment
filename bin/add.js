@@ -18,6 +18,12 @@ export const addAlbum = (answer) => {
   const albumTitle = arr[1];
   const artist = arr[3];
 
+  if (albumTitle === undefined || artist === undefined) {
+    console.log("Please enter a valid album title and artist name.");
+    runCommands();
+    return;
+  }
+
   let results = albums.filter((album) => {
     return album.title.toLowerCase() === albumTitle.toLowerCase();
   });
