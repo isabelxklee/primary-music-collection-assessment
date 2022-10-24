@@ -1,17 +1,15 @@
 #!/usr/bin/env node
-import { albums } from "../variables.js";
+import { albums, stringToArray } from "../variables.js";
 import { runCommands } from "./logger.js";
 
 export const addAlbum = (answer) => {
-  const split = answer.split(/["'`]/g);
+  let arr = stringToArray(answer);
 
-  console.dir(split);
-
-  const albumTitle = split[1];
-  const artist = split[3];
+  const albumTitle = arr[1];
+  const artist = arr[3];
 
   // check for valid # of arguments
-  if (split.length > 5) {
+  if (arr.length > 5) {
     console.log("Please enter a valid album title and artist.");
     runCommands();
     return;
