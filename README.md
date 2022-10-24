@@ -12,12 +12,6 @@ Built by Isabel K. Lee
 
 3. Run `npm install` to install all dependencies.
 
-4. Run `music` to get started!
+4. Run `music` to get start the app.
 
-## Features
-
-```
-$ music
-```
-
-Starts the program!
+5. Run `npm test` to run all tests.
