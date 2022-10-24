@@ -41,6 +41,7 @@ export var runCommands = async function () {
   if (commandList.indexOf(commandPrefix) === -1) {
     console.log("Please enter a valid command.");
     runCommands();
+    return;
   }
 
   switch (answer) {
@@ -75,6 +76,9 @@ export var runCommands = async function () {
       showAllByArtist(answer);
       break;
   }
+
+  console.log("Please enter a valid command.");
+  runCommands();
 
   return;
 };
