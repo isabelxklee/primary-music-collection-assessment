@@ -1,1 +1,5 @@
-export const transform = {};
+const config = {
+  transform: {},
+};
+
+export default config;
