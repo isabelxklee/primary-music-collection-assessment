@@ -4,29 +4,26 @@ import { toBeArrayOfSize } from "jest-extended";
 
 describe("show all unplayed albums", () => {
   test("that don't exist", () => {
-    const data = showAll();
+    const data = showUnplayed();
     expect(data).toBeArrayOfSize(0);
   });
 
   test("that exist", () => {
     addAlbum(`add "The Dark Side of the Moon" "Pink Floyd"`);
     addAlbum(`add "Ride the Lightning" "Metallica"`);
-    const data = showAll();
+    const data = showUnplayed();
     expect(data).toBeArrayOfSize(2);
   });
 });
 
-describe("show all albums by a given artist", () => {
+describe("show unplayed albums by a given artist", () => {
   test("that don't exist", () => {
-    const data = showAllByArtist(`show all by "Beastie Boys"`);
+    const data = showUnplayedByArtist(`show all by "Beastie Boys"`);
     expect(data).toBeArrayOfSize(0);
   });
 
   test("that exist", () => {
-    addAlbum(`add "This is a test." "Pink Floyd"`);
-    addAlbum(`add "Hello World" "Pink Floyd"`);
-    addAlbum(`add "Test Album" "Pink Floyd"`);
-    const data = showAllByArtist(`show all by "Pink Floyd"`);
-    expect(data).toBeArrayOfSize(4);
+    const data = showUnplayedByArtist(`show all by "Pink Floyd"`);
+    expect(data).toBeArrayOfSize(1);
   });
 });
