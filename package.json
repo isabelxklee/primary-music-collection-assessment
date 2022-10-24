@@ -20,5 +20,8 @@
     "url": "https://github.com/isabelxklee/primary-music-collection-assessment/issues"
   },
   "homepage": "https://github.com/isabelxklee/primary-music-collection-assessment#readme",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "jest": "^29.2.1"
+  }
 }
