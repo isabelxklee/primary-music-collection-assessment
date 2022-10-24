@@ -20,6 +20,5 @@ export const music = () => {
   console.log(message);
 
   runCommands();
+  return;
 };
-
-music();

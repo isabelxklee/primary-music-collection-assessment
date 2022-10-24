@@ -7,7 +7,7 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --detectOpenHandles"
   },
   "bin": {
-    "music": "./bin/index.js"
+    "music": "./bin/logger.js"
   },
   "repository": {
     "type": "git",
