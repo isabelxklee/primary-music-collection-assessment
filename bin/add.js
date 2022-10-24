@@ -3,19 +3,19 @@ import { albums, stringToArray } from "../variables.js";
 import { runCommands } from "./logger.js";
 
 export const addAlbum = (answer) => {
+  let message = "";
   let arr = stringToArray(answer);
-
-  console.dir(arr);
-  console.log(arr.length);
 
   const albumTitle = arr[1];
   const artist = arr[3];
 
   // check for valid inputs
   if (albumTitle === undefined || artist === undefined) {
-    console.log("Please enter a valid album title and artist name.");
+    message = "Please enter a valid album title and artist name.";
+
+    console.log(message);
     runCommands();
-    return;
+    return message;
   }
 
   let results = albums.filter((album) => {
@@ -24,11 +24,12 @@ export const addAlbum = (answer) => {
 
   // check for duplicate album titles
   if (results.length > 0) {
-    console.log(
-      "Error: this album title already exists in the database. Please try adding a different album!"
-    );
+    message =
+      "Error: this album title already exists in the database. Please try adding a different album!";
+
+    console.log(message);
     runCommands();
-    return;
+    return message;
   } else {
     // otherwise, push the album data to the db
     albums.push({
@@ -38,8 +39,10 @@ export const addAlbum = (answer) => {
     });
 
     // display added album back to user
-    console.log(`Added "${albumTitle}" by ${artist}`);
+    message = `Added "${albumTitle}" by ${artist}`;
   }
 
+  console.log(message);
   runCommands();
+  return message;
 };

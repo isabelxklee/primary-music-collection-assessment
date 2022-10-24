@@ -4,8 +4,8 @@ import { runCommands } from "./logger.js";
 
 export const playAlbum = (answer) => {
   let arr = stringToArray(answer);
-
   const albumTitle = arr[1];
+  let message = "";
 
   if (albumTitle === undefined) {
     console.log("Please enter a valid album title and artist name.");
@@ -22,15 +22,16 @@ export const playAlbum = (answer) => {
 
   // display error message if this album doesn't exist
   if (result && result.played === false) {
-    console.log(`You're listening to "${result.title}"`);
-
+    message = `You're listening to "${result.title}"`;
     // change play status
     result.played = true;
   } else if (result && result.played === true) {
-    console.log("This album has already been played.");
+    message = "This album has already been played.";
   } else {
-    console.log("Oops! That album doesn't exist.");
+    message = "Oops! That album doesn't exist.";
   }
 
+  console.log(message);
   runCommands();
+  return message;
 };

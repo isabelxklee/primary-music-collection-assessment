@@ -8,4 +8,5 @@ export const quitApp = () => {
 
   console.log("Bye!");
   rl.close();
+  return albums;
 };

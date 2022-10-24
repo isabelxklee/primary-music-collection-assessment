@@ -14,19 +14,30 @@ export const showUnplayed = () => {
     console.log(`"${album.title}" by ${album.artist}`)
   );
 
-  results.length > 0
-    ? resultsMessage
-    : console.log(
-        "All your albums have already been played - there aren't any unplayed albums."
-      );
+  if (albums.length < 1) {
+    console.log("There aren't any unplayed albums to see here.");
+  } else if (results.length > 0) {
+    resultsMessage;
+  } else {
+    console.log(
+      "All your albums have already been played - there aren't any unplayed albums."
+    );
+  }
 
   runCommands();
+  return results;
 };
 
 export const showUnplayedByArtist = (answer) => {
   let arr = stringToArray(answer);
 
   const artist = arr[1];
+
+  if (artist === undefined) {
+    console.log("Please enter a valid artist name.");
+    runCommands();
+    return;
+  }
 
   // filter albums by artist and unplayed status
   let results = albums.filter((album) => {
@@ -48,4 +59,5 @@ export const showUnplayedByArtist = (answer) => {
     : console.log("Oops! There aren't any unplayed albums by this artist yet.");
 
   runCommands();
+  return results;
 };

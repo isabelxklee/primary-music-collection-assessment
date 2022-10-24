@@ -18,6 +18,7 @@ export const showAll = () => {
       );
 
   runCommands();
+  return results;
 };
 
 export const showAllByArtist = (answer) => {
@@ -49,4 +50,5 @@ export const showAllByArtist = (answer) => {
     : console.log("Oops! There aren't any albums by this artist yet.");
 
   runCommands();
+  return results;
 };
